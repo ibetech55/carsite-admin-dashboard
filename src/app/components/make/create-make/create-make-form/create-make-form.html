@@ -1,0 +1,28 @@
+<form [formGroup]="createMakeForm" class="create-make-form" (ngSubmit)="handleSubmit()">
+    <div class="text-align-left">
+        <app-button-component label="Import Makes" />
+    </div>
+    <div class="create-make-form__inputs">
+        <div class="create-make-form__inputs-input">
+            <app-input-component label="Make Name" id="make-name" controlName="makeName" />
+        </div>
+        <div class="create-make-form__inputs-input">
+            <app-input-component label="Make Abbreviation" id="make-abbreviation" controlName="makeAbbreviation" />
+        </div>
+        <div class="create-make-form__inputs-input">
+            <app-select-component label="Origin" controlName="origin" [options]="countryOptions" />
+        </div>
+        <div class="create-make-form__inputs-input">
+            <app-input-component label="Company" id="Company" controlName="company" />
+        </div>
+        <div class="create-make-form__inputs-input">
+            <app-select-component label="Year Founded" controlName="yearFounded" [options]="yearFoundedOptions" />
+        </div>
+        <div class="create-make-form__inputs-input">
+            <app-file-input-component (onChange)="onChangeMakeLogo($event)" label="Make Logo" />
+        </div>
+    </div>
+    <div class="text-align-right">
+        <app-button-component label="Submit" type="submit" />
+    </div>
+</form>

@@ -1,0 +1,11 @@
+<div class="body" [ngClass]="sizeClass()">
+    <mat-toolbar class="toolbar-background">
+        <button class="logo" (click)="toggleCollapse()">
+            <i class="fal fa-bars"></i>
+        </button>
+        <span class="example-spacer"></span>
+    </mat-toolbar>
+    <div class="router-outlet-body">
+        <router-outlet></router-outlet>
+    </div>
+</div>

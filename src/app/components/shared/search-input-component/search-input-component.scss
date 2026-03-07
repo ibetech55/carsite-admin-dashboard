@@ -1,0 +1,20 @@
+.search-input-component {
+    display: flex;
+    align-items: center;
+
+    label, input {
+        display: block;
+        width:100%
+    }
+
+    label {
+        font-weight:600;
+        font-size: 12px;
+        color: #474646;
+       // letter-spacing: 1px;
+    }
+
+    &__input{
+        margin-right: 0.5rem;
+    }
+}

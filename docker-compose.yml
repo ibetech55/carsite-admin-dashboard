@@ -1,0 +1,8 @@
+name: carsite-admin-dashboard
+services:
+  carsite-admin-dashboard:
+    container_name: carsite-admin-dashboard
+    build:
+      context: .
+    ports:
+      - 9500:9500

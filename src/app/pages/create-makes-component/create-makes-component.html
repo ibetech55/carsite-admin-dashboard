@@ -1,0 +1,12 @@
+<div class="create-makes-component section-background page">
+    <h1>Create Make</h1>
+    
+    <div class="create-makes-component__form">
+        <app-create-make-form 
+            (submitFormEmitter)="submitForm()" 
+            (onChangeMakeLogoEmitter)="onChangeMakeLogo($event)"
+            [createMakeForm]="createMakeForm"
+            [countries]="countries"
+        />
+    </div>
+</div>

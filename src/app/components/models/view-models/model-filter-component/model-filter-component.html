@@ -1,0 +1,41 @@
+<div class="model-filter-component">
+    <div>
+        <app-search-input-component id="model-name" buttonLabel="Enter" label="Model Name" [hasButton]="true"
+            buttonLabel="Enter" (onClick)="onClickModelName()" [value]="modelName"
+            (onChange)="onChangeModelName($event)" />
+    </div>
+    <div>
+        <app-search-input-component id="model-code" buttonLabel="Enter" label="Model Code" [hasButton]="true"
+            buttonLabel="Enter" (onClick)="onClickModelCode()" [value]="modelCode"
+            (onChange)="onChangeModelCode($event)" />
+    </div>
+    <mat-accordion class="sidenav-nav-item">
+        <mat-expansion-panel [hideToggle]="false">
+            <mat-expansion-panel-header>
+                Advanced Search
+            </mat-expansion-panel-header>
+            <div class="model-filter-component__inputs">
+                <div class="model-filter-component__input">
+                    <app-input-component id="make-name" label="Make Name" />
+                </div>
+
+                <div class="model-filter-component__input">
+                    <app-input-component id="min-year" label="Min Year Founded" />
+                </div>
+
+                <div class="model-filter-component__input">
+                    <app-input-component id="max-year" label="Max Year Founded" />
+                </div>
+                <div class="model-filter-component__input">
+                    <app-input-component id="body-type" label="Body Type" />
+                </div>
+            </div>
+
+
+            <div class="model-filter-component__filter-button">
+                <app-button-component label="Filter" />
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

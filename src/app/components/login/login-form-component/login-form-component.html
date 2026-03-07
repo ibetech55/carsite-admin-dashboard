@@ -1,0 +1,13 @@
+<div class="login-form-component">
+    <form action="">
+        <div class="login-form-component__input">
+            <app-input-component label="Username" />
+        </div>
+        <div>
+            <app-input-component label="Password" type="password" />
+        </div>
+        <div class="login-form-component__btn">
+            <app-button-component label="Login" [btnBlock]="true" (onClick)="handleLogin()"/>
+        </div>
+    </form>
+</div>

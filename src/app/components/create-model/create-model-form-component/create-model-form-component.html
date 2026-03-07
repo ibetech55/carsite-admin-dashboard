@@ -1,0 +1,23 @@
+<div class="create-model-form-component">
+    <div class="text-align-left">
+        <app-button-component label="Import Makes" />
+    </div>
+    <form [formGroup]="createModelForm" (ngSubmit)="handleSubmit()">
+        <div class="form-input-mb">
+            <app-input-component label="Model Name" id="model-name" controlName="modelName" />
+        </div>
+        <div class="form-input-mb">
+            <app-select-component label="Make" controlName="makeCode" [options]="makeNameListOptions" />
+        </div>
+        <div class="form-input-mb">
+            <app-select-component label="Year Founded" controlName="yearFounded" [options]="yearFoundedOptions" />
+        </div>
+        <div class="form-input-mb">
+            <app-select-component label="Body Type" controlName="bodyType" [options]="bodyStyleOptions"
+                [multiple]="true" />
+        </div>
+        <div class="text-align-right">
+            <app-button-component label="Submit" type="submit" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+.make-filter-component {
+
+
+    &__input-with-btn {
+        display: flex;
+        align-items: center;
+        button {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__input-row-3{
+        display: flex;
+
+        .make-filter-component__input {
+            margin-right: 3rem;
+        }
+    }
+
+    &__filter-button{
+        text-align: right;
+    }
+}

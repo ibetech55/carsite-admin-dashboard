@@ -1,0 +1,36 @@
+<div class="make-filter-component">
+    <div>
+        <app-search-input-component id="make-name" buttonLabel="Enter" label="Make Name" [hasButton]="true" buttonLabel="Enter" (onClick)="onClick($event)" [value]="makeName" (onChange)="onChangeMakeName($event)" />
+    </div>
+        <div>
+        <app-search-input-component id="make-code" buttonLabel="Enter" label="Make Code" [hasButton]="true" buttonLabel="Enter" (onClick)="onClickMakeCode($event)" [value]="makeCode" (onChange)="onChangeMakeCode($event)" />
+    </div>
+    <mat-accordion class="sidenav-nav-item">
+        <mat-expansion-panel [hideToggle]="false">
+            <mat-expansion-panel-header>
+                Advanced Search
+            </mat-expansion-panel-header>
+            <div class="make-filter-component__input-row-3">
+                <div class="make-filter-component__input">
+                    <app-input-component id="origin" label="Origin"  />
+                </div>
+
+                <div class="make-filter-component__input">
+                    <app-input-component id="min-year" label="Min Year Founded" />
+                </div>
+
+                <div class="make-filter-component__input">
+                    <app-input-component id="max-year" label="Max Year Founded" />
+                </div>
+            </div>
+
+
+            <div class="make-filter-component__filter-button">
+                <button mat-raised-button>Filter</button>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+
+</div>

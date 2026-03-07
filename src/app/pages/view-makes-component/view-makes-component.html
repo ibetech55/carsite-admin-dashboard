@@ -1,0 +1,24 @@
+<div class="view-makes-component page section-background">
+    <h1>Make</h1>
+    <div class="make-filters">
+        <div class="filter-input">
+                <app-make-filter-component 
+                (handleByMakeNameEmitter)="handleSearchByMakeName()" 
+                (changeMakeNameEmitter)="onChangeMakeName($event)" 
+                (handleByMakeCodeEmitter)="handleSearchByMakeCode()" 
+                (changeMakeCodeEmitter)="onChangeMakeCode($event)" 
+                [makeName]="makeName" 
+                [makeCode]="makeCode" 
+            />
+        </div>
+    </div>
+    <div class="make-table">
+        <app-make-table-component [data]="(data$ | async) ?? DEFAULT_DATA" (getMakesEmitter)="getMakes($event)" />
+    </div>
+        <div class="activate-buttons">
+        <button mat-raised-button>Activate Makes</button>
+        <button mat-raised-button>Activate All Makes</button>
+        <button mat-raised-button class="danger">Deactivate Makes</button>
+        <button mat-raised-button class="danger">Deactivate All Makes</button>
+    </div>
+</div>

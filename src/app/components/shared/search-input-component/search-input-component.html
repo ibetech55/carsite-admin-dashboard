@@ -1,0 +1,14 @@
+<div class="search-input-component">
+    <div class="search-input-component__input">
+        <mat-label class="label">{{label}}</mat-label>
+        <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="value" required [id]="id" [name]="name" type="text"
+                class="form-control" (ngModelChange)="handleChange()" />
+        </mat-form-field>
+    </div>
+    @if(hasButton){
+        <div class="search-input-component__button">
+            <app-button-component (onClick)="handleClick()" [label]="buttonLabel" />
+        </div>
+    }
+</div>

@@ -1,0 +1,15 @@
+<div class="view-models-component section-background page">
+    <h1 class="page-header">Models</h1>
+    <div class="view-models-component__filter">
+        <app-model-filter-component 
+            [modelCode]="modelCode"
+            [modelName]="modelName"
+            (onChangeModelCodeEmitter)="onChangeModelCode($event)"
+            (onChangeModelNameEmitter)="onChangeModelName($event)"
+            (onClickModelCodeEmitter)="onClickModelCode()"
+            (onClickModelNameEmitter)="onClickModelName()" />
+    </div>
+    <div class="view-models-component__table">
+        <app-model-table-component [data]="(data$ | async) ?? DEFAULT_DATA" (getModelsEmitter)="getModels($event)" />
+    </div>
+</div>

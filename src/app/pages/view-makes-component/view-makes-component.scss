@@ -1,0 +1,26 @@
+.view-makes-component {
+    table {
+        width: 100%;
+    }
+
+    .make-table {
+        margin-top: 1rem;
+    }
+
+    .activate-buttons {
+        margin-top: 1rem;
+
+        button {
+            margin-right: 1rem;
+        }
+    }
+
+    .filter-input {
+        margin-top: 2rem;
+
+        label {
+            display: block;
+        }
+    }
+
+}

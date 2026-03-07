@@ -1,0 +1,10 @@
+<app-left-sidebar 
+ [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" 
+  (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)"
+/>
+
+<app-template-body 
+   [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" 
+   [screenWidth]="screenWidth()"
+   (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)"
+/>

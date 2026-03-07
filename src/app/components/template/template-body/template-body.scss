@@ -1,0 +1,42 @@
+.body {
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  transition: all 0.5s ease;
+  background: #f4f7fa;
+}
+
+.body-trimmed {
+  width: calc(100% - 16.5625rem);
+  margin-left: 16.5625rem;
+}
+
+.body-md-screen {
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
+}
+
+.router-outlet-body {
+  min-height: calc(100vh - 64px);
+  padding: 2rem;
+}
+
+.toolbar-background {
+  background-color:#fff;
+  box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+}
+
+.logo {
+   background: #fff;
+  text-align: center;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 0.313rem;
+  padding: 0.313rem;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  border: none;
+}
