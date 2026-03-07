@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 
 export class BrandService {
-  public url = "http://localhost:5106";
+  public url = "http://3.82.160.248:5106";
 
   constructor(private http: HttpClient) { }
 

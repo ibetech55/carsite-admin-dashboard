@@ -8,7 +8,7 @@ import { IPagination, IQueryParams } from '../../Interfaces/shared';
   providedIn: 'root',
 })
 export class MakeService {
-  public url = "http://localhost:5106/api/brand-microservice/make";
+  public url = "http://3.82.160.248:5106/api/brand-microservice/make";
 
   constructor(private http: HttpClient) { }
 
