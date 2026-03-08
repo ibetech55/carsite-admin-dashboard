@@ -10,7 +10,7 @@ import { ICreateModel, IModels, IQueryModels } from '../../Interfaces/Model';
 })
 export class ModelService {
   private _HttpClient: HttpClient;
-  private URL = "http://3.82.160.248:5106/api/brand-microservice/model"
+  private URL = "https://api.ibetech.online/api/brand-microservice/make"
   /**
    *
    */
