@@ -4,5 +4,8 @@ services:
     container_name: carsite-admin-dashboard
     build:
       context: .
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     ports:
-      - 9500:9500
+      - 80:80
+      - 443:443
