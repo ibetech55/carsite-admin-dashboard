@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICountry } from '../../Interfaces/Location';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +10,8 @@ import { ICountry } from '../../Interfaces/Location';
 
 export class LocationService {
 
-  private URL = "http://localhost:5010/location-api"
+  private URL = environment.LOCATION_API_URL;
   constructor(private _Http:HttpClient) {
-    
-    
   }
   getCountries():Observable<ICountry[]>{
     return this._Http.get<ICountry[]>(`${this.URL}/countries`)

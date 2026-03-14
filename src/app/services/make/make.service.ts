@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ICreateMakeRequestBody, IMakeNameList, IMakes, IQueryMakes } from '../../Interfaces/Make';
 import { IPagination, IQueryParams } from '../../Interfaces/shared';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MakeService {
-  public url = "https://api.ibetech.online/api/brand-microservice/make";
+  public url = environment.MAKE_API_URL;
 
   constructor(private http: HttpClient) { }
 

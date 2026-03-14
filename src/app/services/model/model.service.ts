@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { IMakes } from '../../Interfaces/Make';
 import { IPagination, IQueryParams } from '../../Interfaces/shared';
 import { ICreateModel, IModels, IQueryModels } from '../../Interfaces/Model';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ModelService {
   private _HttpClient: HttpClient;
-  private URL = "https://api.ibetech.online/api/brand-microservice/model"
+  private URL = environment.MODEL_API_URL;
   /**
    *
    */
