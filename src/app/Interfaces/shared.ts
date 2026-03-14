@@ -24,7 +24,6 @@ export interface ISelectOptions {
 }
 
 export interface IFileData {
-  lastModified:number,
   name:string,
   size: number,
   type:string

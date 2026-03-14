@@ -26,7 +26,7 @@ export class CreateMakesComponent implements OnInit{
     company:new FormControl("", {nonNullable:true}),
     yearFounded:new FormControl("", {nonNullable:true}),
     makeAbbreviation:new FormControl("", {nonNullable:true}),
-    makeLogo:new FormControl<IFileData>({name:'', type:"", lastModified:0, size:0}, {nonNullable:true})
+    makeLogo:new FormControl<IFileData>({name:'', type:"", size:0}, {nonNullable:true})
   })
 
 
@@ -56,7 +56,6 @@ export class CreateMakesComponent implements OnInit{
       makeAbbreviation: form.makeAbbreviation,
       yearFounded: +form.yearFounded,
       makeLogo: {
-        lastModified: form.makeLogo.lastModified,
         name: form.makeLogo.name,
         size: form.makeLogo.size,
         type: form.makeLogo.type
@@ -74,7 +73,6 @@ export class CreateMakesComponent implements OnInit{
     this.makeLogoFileData = file;
     this.createMakeForm.patchValue({
       makeLogo:{
-        lastModified: file.lastModified,
         name: file.name,
         size: file.size,
         type: file.type
