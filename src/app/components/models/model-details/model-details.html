@@ -1,0 +1,13 @@
+<div class="make-details">
+    <div class="make-details">
+        <app-detail label="Model Name:" [value]="modelData.modelName" />
+        <app-detail label="Make Name:" [value]="modelData.make.makeName" />
+        <app-detail label="Body Type:" [value]="modelData.bodyType" />
+        <app-detail label="Model Code:" [value]="modelData.modelCode" />
+        <app-detail label="Year Founded:" [value]="modelData.yearFounded.toString()" />
+        <app-detail label="Status" [value]="modelData.active ? 'Active' : 'Inactive'" />
+    </div>
+    <div>
+        <app-button-component label="Edit" />
+    </div>
+</div>

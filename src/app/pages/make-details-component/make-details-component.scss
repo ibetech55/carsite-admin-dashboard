@@ -1,0 +1,8 @@
+.make-details-component_details {
+    display: flex;
+    width: 75%;
+
+    &-detail, &-logo{
+        width: 50%;
+    }
+}

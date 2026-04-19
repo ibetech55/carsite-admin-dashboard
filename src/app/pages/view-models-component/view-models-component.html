@@ -10,6 +10,6 @@
             (onClickModelNameEmitter)="onClickModelName()" />
     </div>
     <div class="view-models-component__table">
-        <app-model-table-component [data]="(data$ | async) ?? DEFAULT_DATA" (getModelsEmitter)="getModels($event)" />
+        <app-model-table-component [data]="(data$ | async) ?? DEFAULT_DATA" (getModelsEmitter)="getModels($event)"  />
     </div>
 </div>

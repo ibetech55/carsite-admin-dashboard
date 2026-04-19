@@ -6,6 +6,7 @@ import { TableComponent } from '../../../shared/table-component/table-component'
 import { IColumnsData, IPagination, IQueryParams } from '../../../../Interfaces/shared';
 import { MakeTableActionComponent } from '../make-table-action-component/make-table-action-component';
 import { IQueryModels } from '../../../../Interfaces/Model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-make-table-component',
@@ -25,6 +26,11 @@ export class MakeTableComponent implements OnChanges {
   @Output() getMakesEmitter = new EventEmitter<IQueryParams<IQueryMakes>>()
   @Input() totalCount: number = 0;
 
+  /**
+   *
+   */
+  constructor(private _Router:Router) {  
+  }
   makeData: IMakeTableData[] = [];
   columnsData: IColumnsData[] = [
     {
@@ -57,8 +63,8 @@ export class MakeTableComponent implements OnChanges {
       component: {
         type: "button",
         label: "View",
-        action: (data: any) => {
-          console.log(data)
+        action: (data: IMakeTableData) => {
+          this._Router.navigate([`/view-make/${data.makeCode}`])
         }
       }
     }

@@ -8,6 +8,8 @@ import { ViewModelsComponent } from './pages/view-models-component/view-models-c
 import { LoginComponent } from './pages/login-component/login-component';
 import { SiteTemplate } from './components/template/site-template/site-template';
 import { CreateModelComponent } from './pages/create-model-component/create-model-component';
+import { MakeDetailsComponent } from './pages/make-details-component/make-details-component';
+import { ModelDetailsComponent } from './pages/model-details-component/model-details-component';
 
 export const routes: Routes = [
     {
@@ -23,8 +25,16 @@ export const routes: Routes = [
                 component: ViewMakesComponent,
             },
             {
+                path: "view-make/:makeCode",
+                component: MakeDetailsComponent,
+            },
+            {
                 path: "view-models",
                 component: ViewModelsComponent,
+            },
+            {
+                path: "view-model/:modelCode",
+                component: ModelDetailsComponent,
             },
             {
                 path: "create-make",

@@ -25,6 +25,7 @@ export interface IQueryModels {
     yearFounded?:number;
     modelCode?:string;
     makeName?:string;
+    makeCode?:string;
 }
 
 export interface ICreateModel {
@@ -33,3 +34,17 @@ export interface ICreateModel {
     yearFounded:number;
     makeCode:string;
 }
+
+export interface IModel {
+  id: string,
+  dateCreated: string,
+  dateUpdated: string,
+  modelName: string,
+  makeId: string,
+  active: boolean,
+  bodyType: string,
+  yearFounded: number,
+  modelCode: string,
+  make: IMakes
+}
+

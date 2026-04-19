@@ -1,0 +1,4 @@
+<div class="make-details-component page section-background" *ngIf="modelData$ | async as data">
+    <h1 class="page-header">{{data.make.makeName}} {{data.modelName}}</h1>
+    <app-model-details [modelData]="data"></app-model-details>
+</div>

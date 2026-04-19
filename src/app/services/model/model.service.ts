@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IMakes } from '../../Interfaces/Make';
 import { IPagination, IQueryParams } from '../../Interfaces/shared';
-import { ICreateModel, IModels, IQueryModels } from '../../Interfaces/Model';
+import { ICreateModel, IModel, IModels, IQueryModels } from '../../Interfaces/Model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -37,10 +37,23 @@ export class ModelService {
       params = params.set('modelCode', queryParams.data.modelCode)
     }
 
+    if (queryParams?.data?.makeName) {
+      params = params.set('makeName', queryParams.data.makeName)
+    }
+
+    if (queryParams?.data?.makeCode) {
+      params = params.set('makeCode', queryParams.data.makeCode)
+    }
+
     return this._HttpClient.get<IPagination<IModels>>(this.URL, { params });
   }
 
   createModel(requestyBody: ICreateModel): Observable<boolean> {
     return this.HttpClient.post<boolean>(this.URL, requestyBody)
   }
+
+  getModelByModelCode(modelCode:string): Observable<IModel> { 
+    return this.HttpClient.get<IModel>(`${this.URL}/${modelCode}`)
+  }
+
 }

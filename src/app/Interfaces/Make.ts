@@ -42,3 +42,17 @@ export interface IMakeNameList {
   makeName:string;
   makeCode:string;
 }
+
+export interface IMakeCodeResponse {
+  active:boolean;
+  company:string;
+  dataCreated:string;
+  dataUpdated:string;
+  id:string;
+  makeAbbreviation:string;
+  makeCode:string;
+  makeLogo:string;
+  origin:string;
+  yearFounded:number;
+  makeName: string;
+}

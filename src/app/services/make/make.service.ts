@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ICreateMakeRequestBody, IMakeNameList, IMakes, IQueryMakes } from '../../Interfaces/Make';
+import { ICreateMakeRequestBody, IMakeCodeResponse, IMakeNameList, IMakes, IQueryMakes } from '../../Interfaces/Make';
 import { IPagination, IQueryParams } from '../../Interfaces/shared';
 import { environment } from '../../../environments/environment';
 
@@ -41,5 +41,10 @@ export class MakeService {
 
   getMakeNameList():Observable<IMakeNameList[]>{
     return this.http.get<IMakeNameList[]>(`${this.url}/makeNameList`)
+  }
+
+  getMakeByMakeCode(makeCode:string): Observable<IMakeCodeResponse> {
+    return this.http.get<IMakeCodeResponse>(`${this.url}/${makeCode}`);
+
   }
 }

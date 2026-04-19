@@ -5,6 +5,7 @@ import { IColumnsData, IPagination, IQueryParams } from '../../../../Interfaces/
 import { TableComponent } from '../../../shared/table-component/table-component';
 import { PageEvent } from '@angular/material/paginator';
 import { ButtonComponent } from "../../../shared/button-component/button-component";
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-model-table-component',
@@ -13,6 +14,13 @@ import { ButtonComponent } from "../../../shared/button-component/button-compone
   styleUrl: './model-table-component.scss',
 })
 export class ModelTableComponent implements OnChanges {
+  /**
+   *
+   */
+  constructor(private readonly _Router:Router) {
+
+    
+  }
   @Output() getModelsEmitter = new EventEmitter<IQueryParams<IQueryModels>>();
   @Input() data: IPagination<IModels> = {
     limit: 0,
@@ -47,6 +55,17 @@ export class ModelTableComponent implements OnChanges {
     {
       key: 'modelCode',
       columnName: 'Model Code'
+    },
+    {
+      key: "component",
+      columnName: "",
+      component: {
+        type: "button",
+        label: "View",
+        action: (data: IModelTableData) => {
+          this._Router.navigate([`/view-model/${data.modelCode}`])
+        }
+      }
     }
   ];
 
@@ -59,7 +78,7 @@ export class ModelTableComponent implements OnChanges {
       page: event.pageIndex,
       limit: event.pageSize
     };
-    this.getModelsEmitter.emit(queryParams)
+    this.getModelsEmitter.emit(queryParams);
   }
 
   ngOnChanges() {
