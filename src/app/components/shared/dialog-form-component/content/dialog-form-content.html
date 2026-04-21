@@ -1,0 +1,15 @@
+<div class="dialog-form">
+    <h1 mat-dialog-title>{{data?.title}}</h1>
+    <mat-dialog-content class="mat-typography">
+        <div *ngIf="data?.type === 'makeEdit'">
+            <app-edit-make-form [editMakeForm]="data?.form" [makeData]="data?.data"></app-edit-make-form>
+        </div>
+        <div *ngIf="data?.type === 'modelEdit'">
+            Model
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <app-button-component label="Cancel" [matDialogClose]="true" class="dialog-form-content__cancel" />
+        <app-button-component label="Save"  (onClick)="data.onClick()" />
+    </mat-dialog-actions>
+</div>

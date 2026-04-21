@@ -5,8 +5,9 @@
         <app-detail label="Origin:" [value]="makeData.origin" />
         <app-detail label="Company:" [value]="makeData.company" />
         <app-detail label="Year Founded:" [value]="makeData.yearFounded.toString()" />
+        <app-detail label="Status:" [value]="makeData.active ? 'Active' : 'Inactive'" />
     </div>
     <div>
-        <app-button-component label="Edit" />
+        <app-button-component label="Edit" (onClick)="editMakeModal()" />
     </div>
 </div>

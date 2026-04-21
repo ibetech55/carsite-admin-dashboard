@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IMakeCodeResponse } from '../../../../Interfaces/Make';
 import { Detail } from "../../../shared/detail/detail";
 import { ButtonComponent } from "../../../shared/button-component/button-component";
+import { CdkAutofill } from "@angular/cdk/text-field";
 
 @Component({
   selector: 'app-make-details',
@@ -10,5 +11,10 @@ import { ButtonComponent } from "../../../shared/button-component/button-compone
   styleUrl: './make-details.scss',
 })
 export class MakeDetails {
-  @Input() makeData!:IMakeCodeResponse
+  @Input() makeData!:IMakeCodeResponse;
+  @Output() openModalEmitter = new EventEmitter<void>();
+
+  editMakeModal(){
+    this.openModalEmitter.emit();
+  }
 }

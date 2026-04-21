@@ -1,0 +1,11 @@
+<div class="dialog-confirmation">
+    <h1 mat-dialog-title>{{data?.title}}</h1>
+    <mat-dialog-content class="mat-typography">
+        <div [innerHTML]="data?.message">
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <app-button-component label="Cancel" [matDialogClose]="true" class="dialog-confirmation__cancel" />
+        <app-button-component label="Save" [matDialogClose]="true" (onClick)="data.onClick()" />
+    </mat-dialog-actions>
+</div>

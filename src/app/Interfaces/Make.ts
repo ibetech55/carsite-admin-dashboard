@@ -56,3 +56,11 @@ export interface IMakeCodeResponse {
   yearFounded:number;
   makeName: string;
 }
+
+export interface IEditMakeRequestBody {
+  makeName: string;
+  origin: string;
+  active: boolean;
+  yearFounded: number;
+  company: string;
+}

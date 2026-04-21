@@ -51,7 +51,6 @@ export class CreateMakeForm implements OnInit, OnChanges {
       value: country.name,
       label: country.name
     }))
-    console.log(this.countryOptions)
   }
   handleSubmit() {
     this.submitFormEmitter.emit();

@@ -29,6 +29,8 @@
   --mat-select-panel-background-color: #fff;
   --mat-option-label-text-size: 12px;
   --mat-select-trigger-text-size: 12px;
+  --mat-dialog-container-shape: 0px;
+  --mat-dialog-container-color: #fff;
 }
 
 html {
@@ -230,4 +232,19 @@ input:hover {
 
 .form-input-mb{
   margin-bottom: 1rem;
+}
+
+.mat-mdc-dialog-content {
+  overflow-y: auto;
+  max-height: 100%;
+  display: block; /* important */
+}
+
+.mdc-form-field--align-end>label {
+  font-size: 13px;
+  padding: 0 !important;
+}
+
+.bold {
+  font-weight: bold;
 }
