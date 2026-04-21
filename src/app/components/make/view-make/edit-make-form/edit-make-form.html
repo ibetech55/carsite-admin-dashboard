@@ -1,0 +1,9 @@
+<div class="edit-make-form">
+    <form [formGroup]="editMakeForm" class="create-make-form">
+        <app-input-component label="Make Name" id="make-name" controlName="makeName" />
+        <app-input-component label="Company" id="company" controlName="company" />
+        <app-select-component label="Origin" id="orign" controlName="origin" [options]="countriesOptions" />
+        <app-select-component label="Year Founded" controlName="yearFounded" [options]="yearFoundedOptions" />
+        <app-checkbox-component label="Status" controlName="active" />
+    </form>
+</div>

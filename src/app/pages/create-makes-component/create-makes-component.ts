@@ -13,43 +13,43 @@ import { IFileData } from '../../Interfaces/shared';
   templateUrl: './create-makes-component.html',
   styleUrl: './create-makes-component.scss',
 })
-export class CreateMakesComponent implements OnInit{
+export class CreateMakesComponent implements OnInit {
 
-  constructor(private _MakeService:MakeService, private readonly _LocationService:LocationService) {
+  constructor(private _MakeService: MakeService, private readonly _LocationService: LocationService) {
 
-    
+
   }
-  
+
   createMakeForm = new FormGroup({
-    makeName: new FormControl("", {nonNullable:true}),
-    origin:new FormControl("", {nonNullable:true}),
-    company:new FormControl("", {nonNullable:true}),
-    yearFounded:new FormControl("", {nonNullable:true}),
-    makeAbbreviation:new FormControl("", {nonNullable:true}),
-    makeLogo:new FormControl<IFileData>({name:'', type:"", size:0}, {nonNullable:true})
+    makeName: new FormControl("", { nonNullable: true }),
+    origin: new FormControl("", { nonNullable: true }),
+    company: new FormControl("", { nonNullable: true }),
+    yearFounded: new FormControl("", { nonNullable: true }),
+    makeAbbreviation: new FormControl("", { nonNullable: true }),
+    makeLogo: new FormControl<IFileData>({ name: '', type: "", size: 0 }, { nonNullable: true })
   })
 
 
-  countries:ICountry[] = [];
-  makeLogoFileData!:File;
-  
+  countries: ICountry[] = [];
+  makeLogoFileData!: File;
+
   ngOnInit(): void {
-    this.getCountries();    
+    this.getCountries();
   }
 
-    getCountries() {
+  getCountries() {
     this._LocationService.getCountries()
-        .subscribe(data=>{
-          if(data){
-            this.countries = data;
-          }
-        })
+      .subscribe(data => {
+        if (data) {
+          this.countries = data;
+        }
+      })
   }
 
-  submitForm(){
+  submitForm() {
     const form = this.createMakeForm.getRawValue();
 
-    const requestBody:ICreateMakeRequestBody = {
+    const requestBody: ICreateMakeRequestBody = {
       makeName: form.makeName,
       origin: form.origin,
       company: form.company,
@@ -62,17 +62,17 @@ export class CreateMakesComponent implements OnInit{
       }
     }
     this._MakeService.postMake(requestBody).subscribe({
-      complete:()=>{
+      complete: () => {
         this.createMakeForm.reset();
         alert("Done")
       }
     })
   }
 
-  onChangeMakeLogo(file:File){
+  onChangeMakeLogo(file: File) {
     this.makeLogoFileData = file;
     this.createMakeForm.patchValue({
-      makeLogo:{
+      makeLogo: {
         name: file.name,
         size: file.size,
         type: file.type

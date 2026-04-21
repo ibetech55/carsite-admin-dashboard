@@ -1,10 +1,19 @@
 <div class="make-details-component page section-background" *ngIf="makeData$ | async as data">
     <h1 class="page-header">{{data.makeName}} Details</h1>
     <div class="make-details-component_details">
-        <app-make-details [makeData]="data" class="make-details-component_details-detail" />
+        <app-make-details [makeData]="data" class="make-details-component_details-detail" (openModalEmitter)="openModal()" />
         <app-make-logo class="make-details-component_details-logo" />
     </div>
     <div>
         <app-model-table-component [data]="(modelData$ | async) ?? DEFAULT_DATA" (getModelsEmitter)="getModels($event)" />
+    </div>
+    <div>
+        <app-dialog-form-component 
+            [form]="editMakeForm" 
+            type="makeEdit" [title]="data.makeName" 
+            [data]="data" (editMakeEmitter)="editMake()" 
+            confirmTitle="Warning!"
+            [confirmMessage]="CONFIRM_MESSAGE"
+            />
     </div>
 </div>
