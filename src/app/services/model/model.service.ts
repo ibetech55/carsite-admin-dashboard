@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IMakes } from '../../Interfaces/Make';
 import { IPagination, IQueryParams } from '../../Interfaces/shared';
-import { ICreateModel, IModel, IModels, IQueryModels } from '../../Interfaces/Model';
+import { ICreateModel, IEditModelRequestBody, IModel, IModels, IQueryModels } from '../../Interfaces/Model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -48,12 +48,15 @@ export class ModelService {
     return this._HttpClient.get<IPagination<IModels>>(this.URL, { params });
   }
 
-  createModel(requestyBody: ICreateModel): Observable<boolean> {
-    return this.HttpClient.post<boolean>(this.URL, requestyBody)
+  createModel(body: ICreateModel): Observable<boolean> {
+    return this.HttpClient.post<boolean>(this.URL, body);
   }
 
   getModelByModelCode(modelCode:string): Observable<IModel> { 
-    return this.HttpClient.get<IModel>(`${this.URL}/${modelCode}`)
+    return this.HttpClient.get<IModel>(`${this.URL}/${modelCode}`);
   }
 
+  editModel(modelCode:string, body:IEditModelRequestBody):Observable<boolean> {
+    return this.HttpClient.put<boolean>(`${this.URL}/${modelCode}`, body);
+  }
 }

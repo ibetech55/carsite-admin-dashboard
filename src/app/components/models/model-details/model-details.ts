@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Detail } from "../../shared/detail/detail";
 import { IModel } from '../../../Interfaces/Model';
 import { ButtonComponent } from "../../shared/button-component/button-component";
@@ -11,4 +11,5 @@ import { ButtonComponent } from "../../shared/button-component/button-component"
 })
 export class ModelDetails {
   @Input() modelData!:IModel;
+  @Output() openDialogEmitter = new EventEmitter<void>();
 }

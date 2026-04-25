@@ -5,7 +5,7 @@
             <app-edit-make-form [editMakeForm]="data?.form" [makeData]="data?.data"></app-edit-make-form>
         </div>
         <div *ngIf="data?.type === 'modelEdit'">
-            Model
+            <app-edit-model-form  [editModelForm]="data?.form" [modelData]="data?.data" />
         </div>
     </mat-dialog-content>
     <mat-dialog-actions align="end">
