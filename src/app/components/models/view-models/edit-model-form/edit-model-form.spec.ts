@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditMake } from './edit-make';
+import { EditModelForm } from './edit-model-form';
 
-describe('EditMake', () => {
-  let component: EditMake;
-  let fixture: ComponentFixture<EditMake>;
+describe('EditModelForm', () => {
+  let component: EditModelForm;
+  let fixture: ComponentFixture<EditModelForm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditMake]
+      imports: [EditModelForm]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EditMake);
+    fixture = TestBed.createComponent(EditModelForm);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

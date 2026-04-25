@@ -8,6 +8,6 @@
         <app-detail label="Status" [value]="modelData.active ? 'Active' : 'Inactive'" />
     </div>
     <div>
-        <app-button-component label="Edit" />
+        <app-button-component label="Edit" (onClick)="openDialogEmitter.emit()" />
     </div>
 </div>

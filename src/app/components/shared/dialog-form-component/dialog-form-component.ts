@@ -17,7 +17,7 @@ export class DialogFormComponent<T> {
   @Input() data!: T;
   @Input() type!: string;
   @Input() title!: string;
-  @Output() editMakeEmitter = new EventEmitter<void>();
+  @Output() handleEmitter = new EventEmitter<void>();
   @Input() form!: FormGroup;
   @Input() confirmTitle!: string;
   @Input() confirmMessage!: string;
@@ -48,7 +48,7 @@ export class DialogFormComponent<T> {
         message: this.confirmMessage,
         data: this.data,
         onClick: () => {
-          this.editMakeEmitter.emit();
+          this.handleEmitter.emit();
           this.dialog.closeAll();
         }
       }

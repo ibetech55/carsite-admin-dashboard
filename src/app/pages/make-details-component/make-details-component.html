@@ -10,8 +10,10 @@
     <div>
         <app-dialog-form-component 
             [form]="editMakeForm" 
-            type="makeEdit" [title]="data.makeName" 
-            [data]="data" (editMakeEmitter)="editMake()" 
+            type="makeEdit" 
+            [title]="data.makeName" 
+            [data]="data" 
+            (handleEmitter)="editMake()" 
             confirmTitle="Warning!"
             [confirmMessage]="CONFIRM_MESSAGE"
             />

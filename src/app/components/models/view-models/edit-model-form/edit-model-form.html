@@ -1,0 +1,7 @@
+<form [formGroup]="editModelForm" class="edit-model-form">
+    <app-input-component label="Model Name" id="model-name" controlName="modelName" />
+    <app-select-component label="Make Name" controlName="makeName" [options]="makeNameOptions" />
+    <app-select-component label="Year Founded" controlName="yearFounded" [options]="yearFoundedOptions" />
+    <app-select-component label="Body Type" controlName="bodyType" [options]="bodyTypeOptions" [multiple]="true" />
+    <app-checkbox-component label="Status" controlName="active" />
+</form>
