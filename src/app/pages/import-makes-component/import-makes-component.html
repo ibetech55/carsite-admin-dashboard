@@ -1,0 +1,8 @@
+<div class="import-makes-component section-background page">
+    <h1 class="page-header">Import Makes</h1>
+    <app-import-makes 
+        (downloadMakeTemplateEmitter)="downloadMakesTemplate()" 
+        (onFileChangeEmitter)="onFileChange($event)"
+        (submitFileEmitter)="submitFile()" 
+    />
+</div>

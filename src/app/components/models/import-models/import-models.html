@@ -1,0 +1,14 @@
+<div class="import-models">
+    <div class="import-models__info">
+        <p>Select a Spreadsheet or CSV file to upload.</p>
+        <p>Files must contain the following columns in the following order: <strong>Model Name, Year Founded, Make Name, Body Type</strong></p>
+        <p>Body Type should be comma seperated if there are multiples with no spaces - <strong>Ex: Sedan,Coupe,Hatchback</strong></p>
+        <p class="download-link" (click)="downloadModelTemplateEmitter.emit()">Download create models spreadsheet template</p>
+    </div>
+    <div class="import-models__file-upload">
+        <app-file-input-component (onChange)="onFileChangeEmitter.emit($event)"  />
+    </div>
+    <div class="import-models__submit-file">
+        <app-button-component label="Submit File" (onClick)="submitFileEmitter.emit()" />
+    </div>
+</div>

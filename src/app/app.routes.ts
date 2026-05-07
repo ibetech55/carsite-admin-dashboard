@@ -10,6 +10,10 @@ import { SiteTemplate } from './components/template/site-template/site-template'
 import { CreateModelComponent } from './pages/create-model-component/create-model-component';
 import { MakeDetailsComponent } from './pages/make-details-component/make-details-component';
 import { ModelDetailsComponent } from './pages/model-details-component/model-details-component';
+import { ImportMakes } from './components/make/import-makes/import-makes';
+import { ImportModels } from './components/models/import-models/import-models';
+import { ImportMakesComponent } from './pages/import-makes-component/import-makes-component';
+import { ImportModelsComponent } from './pages/import-models-component/import-models-component';
 
 export const routes: Routes = [
     {
@@ -52,6 +56,14 @@ export const routes: Routes = [
                 path: "create-model",
                 component: CreateModelComponent,
             },
+            {
+                path: "import-makes",
+                component: ImportMakesComponent,
+            },
+            {
+                path: "import-models",
+                component: ImportModelsComponent,
+            }
         ]
     },
     {

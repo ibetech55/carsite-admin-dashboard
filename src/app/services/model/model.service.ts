@@ -59,4 +59,8 @@ export class ModelService {
   editModel(modelCode:string, body:IEditModelRequestBody):Observable<boolean> {
     return this.HttpClient.put<boolean>(`${this.URL}/${modelCode}`, body);
   }
+
+  downloadModelsTemplateFile() {
+    return this.HttpClient.get(`${this.URL}/downloadModelsTemplate`, {responseType:"blob"})
+  }
 }
