@@ -1,12 +1,10 @@
 <div class="create-makes-component section-background page">
     <h1>Create Make</h1>
-    
+    <div class="text-align-left create-makes-component_import-btn">
+        <app-button-component label="Import Makes" (onClick)="handleImportMakesPage()" />
+    </div>
     <div class="create-makes-component__form">
-        <app-create-make-form 
-            (submitFormEmitter)="submitForm()" 
-            (onChangeMakeLogoEmitter)="onChangeMakeLogo($event)"
-            [createMakeForm]="createMakeForm"
-            [countries]="countries"
-        />
+        <app-create-make-form (submitFormEmitter)="submitForm()" (onChangeMakeLogoEmitter)="onChangeMakeLogo($event)"
+            [createMakeForm]="createMakeForm" [countries]="countries" />
     </div>
 </div>

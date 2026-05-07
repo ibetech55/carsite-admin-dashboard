@@ -1,0 +1,8 @@
+<div class="import-models-component section-background page">
+    <h1 class="page-header">Import Models</h1>
+    <app-import-models 
+        (onFileChangeEmitter)="onFileChange($event)"
+        (submitFileEmitter)="submitFile()" 
+        (downloadModelTemplateEmitter)="downloadModelTemplate()" 
+    />
+</div>

@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class MakeService {
-  public url = environment.MAKE_API_URL;
+  private readonly url = environment.MAKE_API_URL;
 
   constructor(private http: HttpClient) { }
 
@@ -49,5 +49,11 @@ export class MakeService {
 
   editMake(makeCode: string, body: IEditMakeRequestBody) {
     return this.http.put<boolean>(`${this.url}/${makeCode}`, body);
+  }
+
+  downloadMakesTemplateFile() {
+    return this.http.get(this.url + '/downloadMakesTemplate', {
+      responseType: 'blob'
+    });
   }
 }

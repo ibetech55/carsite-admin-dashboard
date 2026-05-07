@@ -1,7 +1,4 @@
 <div class="create-model-form-component">
-    <div class="text-align-left">
-        <app-button-component label="Import Makes" />
-    </div>
     <form [formGroup]="createModelForm" (ngSubmit)="handleSubmit()">
         <div class="form-input-mb">
             <app-input-component label="Model Name" id="model-name" controlName="modelName" />

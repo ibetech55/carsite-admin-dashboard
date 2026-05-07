@@ -1,0 +1,14 @@
+<div class="import-makes">
+    <div class="import-makes__info">
+        <p>Select a Spreadsheet or CSV file to upload.</p>
+        <p>Files must contain the following columns in the following order: <strong>Make Name, Origin, Company, Year
+                Founded, Make Abbreviation</strong></p>
+        <p class="download-link" (click)="downloadMakeTemplate()">Download create makes spreadsheet template</p>
+    </div>
+    <div class="import-makes__file-upload">
+        <app-file-input-component (onChange)="onFileChangeEmitter.emit($event)" />
+    </div>
+    <div class="import-makes__submit-file">
+        <app-button-component label="Submit File" (onClick)="submitFileEmitter.emit()" />
+    </div>
+</div>

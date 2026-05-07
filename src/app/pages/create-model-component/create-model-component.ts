@@ -5,10 +5,12 @@ import { MakeService } from '../../services/make/make.service';
 import { ISelectOptions } from '../../Interfaces/shared';
 import { ModelService } from '../../services/model/model.service';
 import { ICreateModel } from '../../Interfaces/Model';
+import { ButtonComponent } from '../../components/shared/button-component/button-component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-model-component',
-  imports: [CreateModelFormComponent],
+  imports: [CreateModelFormComponent, ButtonComponent],
   templateUrl: './create-model-component.html',
   styleUrl: './create-model-component.scss',
 })
@@ -16,7 +18,7 @@ export class CreateModelComponent implements OnInit {
 
   makeNameListOptions:ISelectOptions[] = [];
 
-  constructor(private readonly _ModelService:ModelService , private readonly _MakeService:MakeService) {
+  constructor(private readonly _ModelService:ModelService , private readonly _MakeService:MakeService, private readonly _Router:Router) {
   }
 
 
@@ -57,5 +59,9 @@ export class CreateModelComponent implements OnInit {
               alert("Done")
             }
           })
+  }
+
+  handleImportModelsPage(){
+    this._Router.navigate(["import-models"]);
   }
 }

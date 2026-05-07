@@ -6,16 +6,18 @@ import { ICreateMakeRequestBody } from '../../Interfaces/Make';
 import { ICountry } from '../../Interfaces/Location';
 import { LocationService } from '../../services/location/location.service';
 import { IFileData } from '../../Interfaces/shared';
+import { ButtonComponent } from '../../components/shared/button-component/button-component';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-makes-component',
-  imports: [CreateMakeForm, FormsModule, ReactiveFormsModule],
+  imports: [CreateMakeForm, FormsModule, ReactiveFormsModule, ButtonComponent],
   templateUrl: './create-makes-component.html',
   styleUrl: './create-makes-component.scss',
 })
 export class CreateMakesComponent implements OnInit {
 
-  constructor(private _MakeService: MakeService, private readonly _LocationService: LocationService) {
+  constructor(private _MakeService: MakeService, private readonly _LocationService: LocationService, private readonly _Router:Router) {
 
 
   }
@@ -78,5 +80,9 @@ export class CreateMakesComponent implements OnInit {
         type: file.type
       }
     })
+  }
+
+  handleImportMakesPage(){
+    this._Router.navigate(["import-makes"])
   }
 }
