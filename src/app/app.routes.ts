@@ -21,53 +21,53 @@ export const routes: Routes = [
         component: SiteTemplate,
         children: [
             {
-                path: "",
+                path: "admin",
                 component: DashboardComponent,
             },
             {
-                path: "view-makes",
+                path: "admin/view-makes",
                 component: ViewMakesComponent,
             },
             {
-                path: "view-make/:makeCode",
+                path: "admin/view-make/:makeCode",
                 component: MakeDetailsComponent,
             },
             {
-                path: "view-models",
+                path: "admin/view-models",
                 component: ViewModelsComponent,
             },
             {
-                path: "view-model/:modelCode",
+                path: "admin/view-model/:modelCode",
                 component: ModelDetailsComponent,
             },
             {
-                path: "create-make",
+                path: "admin/create-make",
                 component: CreateMakesComponent,
             },
             {
-                path: "models",
+                path: "admin/models",
                 component: ModelComponent,
             },
             {
-                path: "users",
+                path: "admin/users",
                 component: UserComponent,
             },
             {
-                path: "create-model",
+                path: "admin/create-model",
                 component: CreateModelComponent,
             },
             {
-                path: "import-makes",
+                path: "admin/import-makes",
                 component: ImportMakesComponent,
             },
             {
-                path: "import-models",
+                path: "admin/import-models",
                 component: ImportModelsComponent,
             }
         ]
     },
     {
-        path: "login",
+        path: "admin/login",
         component: LoginComponent
     },
 

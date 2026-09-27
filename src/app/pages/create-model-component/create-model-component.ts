@@ -62,6 +62,6 @@ export class CreateModelComponent implements OnInit {
   }
 
   handleImportModelsPage(){
-    this._Router.navigate(["import-models"]);
+    this._Router.navigate(["admin/import-models"]);
   }
 }

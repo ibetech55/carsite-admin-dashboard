@@ -28,7 +28,11 @@ export class ImportModelsComponent {
   }
 
   submitFile(){
-    console.log(this.fileData)
+   this._ModelService.createMultipleModels(this.fileData)
+        .subscribe(data=>{
+          console.log(data);
+          alert("Done")
+        })
   }
 
   onFileChange(file:File){

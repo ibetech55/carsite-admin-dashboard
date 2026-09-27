@@ -1,18 +1,21 @@
-FROM node:22-alpine AS build
+FROM node:24.19.0-alpine AS build
 
 WORKDIR /app
 
 COPY package*.json .
 
-RUN npm ci
+RUN npm ci 
 
-COPY . .
+COPY . . 
 
-RUN npm run build
+RUN npm run build 
 
+FROM node:24.19.0-alpine
 
-FROM nginx:1.27.0
+WORKDIR /app 
 
-COPY nginx.conf /etc/nginx/nginx.conf
+RUN npm i -g serve
 
-COPY --from=build /app/dist /dist
+COPY --from=build /app/dist .
+
+CMD ["serve", "-s", "-l", "4200", "carsite-admin-dashboard/browser"]

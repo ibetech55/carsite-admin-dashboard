@@ -52,15 +52,22 @@ export class ModelService {
     return this.HttpClient.post<boolean>(this.URL, body);
   }
 
-  getModelByModelCode(modelCode:string): Observable<IModel> { 
+  getModelByModelCode(modelCode: string): Observable<IModel> {
     return this.HttpClient.get<IModel>(`${this.URL}/${modelCode}`);
   }
 
-  editModel(modelCode:string, body:IEditModelRequestBody):Observable<boolean> {
+  editModel(modelCode: string, body: IEditModelRequestBody): Observable<boolean> {
     return this.HttpClient.put<boolean>(`${this.URL}/${modelCode}`, body);
   }
 
   downloadModelsTemplateFile() {
-    return this.HttpClient.get(`${this.URL}/downloadModelsTemplate`, {responseType:"blob"})
+    return this.HttpClient.get(`${this.URL}/downloadModelsTemplate`, { responseType: "blob" })
+  }
+
+  createMultipleModels(file: File): Observable<string> {
+    let formData = new FormData();
+
+    formData.append("fileData", file);
+    return this.HttpClient.post<string>(`${this.URL}/createMultipleModels`, formData)
   }
 }

@@ -83,6 +83,6 @@ export class CreateMakesComponent implements OnInit {
   }
 
   handleImportMakesPage(){
-    this._Router.navigate(["import-makes"])
+    this._Router.navigate(["admin/import-makes"])
   }
 }
